@@ -13,6 +13,7 @@ Web server for storing and scoring images / 用于存储图像并评分的网站
 - [ ] 显示静态页面
 - [ ] 注册和登录
 - [ ] 上传文件
+- [ ] WebP 格式转换
 - [ ] 使用 base16384 算法实现文件名加密
 - [ ] 参与评分
 - [ ] 按用户储存评分并生成 csv 文件
