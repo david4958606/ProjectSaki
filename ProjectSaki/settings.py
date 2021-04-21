@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import secret
 
 from pathlib import Path
 
@@ -20,14 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-zbw-6(4ev$vse1@yr+^(6zqq7jt+kumfi&^#n_9iz3i!0x&*(p'
+SECRET_KEY = secret.key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "test.davidwang.codes",
-]
+ALLOWED_HOSTS = secret.hosts
 
 
 # Application definition
