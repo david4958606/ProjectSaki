@@ -26,9 +26,7 @@ SECRET_KEY = secret.key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "test.davidwang.codes",
-]
+ALLOWED_HOSTS = secret.hosts
 
 
 # Application definition
