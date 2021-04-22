@@ -23,12 +23,14 @@ The string in the angle brackets should be a random one so that your admin page
 would not be accessed easily.
 '''
 
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from . import views
 import secret
 
 urlpatterns = [
+    url(r"^$",views.index),
     path(secret.admin_addr, admin.site.urls),
     path('index/',views.index),
     path("old/",views.index_old)
