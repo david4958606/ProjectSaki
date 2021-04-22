@@ -13,12 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+'''
+!!!IMPORTANT FOR YOUR PRIVACY!!!
+privacy protecting measure is taken: add an 'secret.py' file ,which is already
+included in gitignore, in the base path, and add the following sentence:
+admin_addr = <YOUR MASK FOR YOUR DJANGO ADMIN PAGE>
+admin_addr = ''.join([admin_addr, '/'])
+The string in the angle brackets should be a random one so that your admin page
+would not be accessed easily.
+'''
+
 from django.contrib import admin
 from django.urls import path
 from . import views
+import secret
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path(secret.admin_addr, admin.site.urls),
     path('index/',views.index),
     path("old/",views.index_old)
 ]

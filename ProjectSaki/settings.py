@@ -9,6 +9,16 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+
+'''
+!!!IMPORTANT FOR YOUR PRIVACY!!!
+privacy protecting measure is taken: add an 'secret.py' file ,which is already
+included in gitignore, in the base path, and add the following sentence:
+key = <YOUR ORIGINAL SECRET_KEY STRING>
+hosts = <YOUR ORIGINAL ALLOWED_HOST LIST>
+debug_mode = <TRUE / FALSE>
+'''
+
 import secret
 
 from pathlib import Path
@@ -24,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secret.key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = secret.debug_mode
 
 ALLOWED_HOSTS = secret.hosts
 
