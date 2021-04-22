@@ -25,9 +25,12 @@ would not be accessed easily.
 
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
 import secret
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     url(r"^$",views.index),
